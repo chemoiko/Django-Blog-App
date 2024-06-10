@@ -6,6 +6,15 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>blaimey</h1>
+    <h1>Article List</h1>
+        <div class="articles">
+            {%for article in articles%}    <!--these types of brackets are for python code-->
+                <div class="article">
+                    <h2><a href="#">{{article.title}}</a></h2>
+                    <p>{{article.body}}</p>
+                    <p>{{article.date}}</p>
+                </div>
+            {% endfor%}
+        </div>
 </body>
 </html>
