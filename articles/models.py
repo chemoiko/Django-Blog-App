@@ -11,3 +11,7 @@ class Article(models.Model):
     #this below is a method which obviously should be within a class
     def __str__(self):      #this will help us to show the title of the object when we run Article.objects.all() instead of just showing us cryptic things like <Article: Article object(1)>
         return self.title
+    
+
+    def snippet(self):      #this shows first 50 characters of the article
+        return self.body[:50] + '...'
