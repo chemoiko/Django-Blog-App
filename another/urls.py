@@ -26,3 +26,6 @@ urlpatterns = [
     path('', views.homepage),
     path('articles/', include('articles.urls')),
 ]
+
+
+# stopped on admins video
