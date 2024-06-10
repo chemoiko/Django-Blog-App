@@ -6,4 +6,5 @@ urlpatterns = [
    
     path('', views.article_list),
     path('<slug:abc>/', views.article_detail, name='detail'),
+    
 ]
