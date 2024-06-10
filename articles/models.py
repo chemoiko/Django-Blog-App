@@ -7,6 +7,7 @@ class Article(models.Model):
     slug =  models.SlugField()
     body = models.TextField()
     date = models.DateTimeField(auto_now_add=True)
+    thumb = models.ImageField(default='default.png',blank=True)
 
     #this below is a method which obviously should be within a class
     def __str__(self):      #this will help us to show the title of the object when we run Article.objects.all() instead of just showing us cryptic things like <Article: Article object(1)>
