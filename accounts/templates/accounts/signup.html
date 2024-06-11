@@ -1,5 +1,16 @@
+
 {% extends "base_layout.html" %}
 
-{% block content  %}
+
+
+
+{% block content %}
 <h1>sign up</h1>
+<form class="site-form" action="/accounts/signup/" method ="post">       <!--data is sent to /accounts/signup url-->
+
+    {% csrf_token %}		<!--this is added to tell django that this request has come from our app not other peoples-->
+    {{form}}
+
+    <input type="submit" value ="signup">
+</form>      
 {% endblock  %}
