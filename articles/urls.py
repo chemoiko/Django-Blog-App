@@ -5,6 +5,8 @@ app_name = 'articles'   #this is called namespacing to not confuse the urls of m
 urlpatterns = [
    
     path('', views.article_list, name='list'),
+    path('create/', views.article_create, name='create'),
+
     path('<slug:abc>/', views.article_detail, name='detail'),
     
 ]

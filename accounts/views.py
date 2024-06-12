@@ -25,6 +25,8 @@ def login_view(request):
             #log in user
             user = form.get_user()      #saves the user trying to login to the user variable
             login(request, user)        #this logins the user
+            if 'next' in request.POST:      #if the next parameter is sent along in the post request
+                return redirect(request.POST.get('next'))
             return redirect('articles:list')        #this is not logining in but just redirecting
     else:
          form = AuthenticationForm()      #else for the get request return fresh form
