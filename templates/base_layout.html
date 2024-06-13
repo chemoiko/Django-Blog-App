@@ -12,7 +12,7 @@
     <div class="wrapper">
         <header>
 
-            <h1 class="banner"><a href="{% url 'articles:list' %}"><img class= "banner" src="{% static 'DC_Characters.webp'%}" alt=""></a></h1>
+            <h1 class="banner"><a href="{% url 'home' %}"><img class= "banner" src="{% static 'DC_Characters.webp'%}" alt=""></a></h1>
             <nav>
                 <ul>
                     {% if user.is_authenticated %}
