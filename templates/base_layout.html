@@ -15,13 +15,19 @@
             <h1 class="banner"><a href="{% url 'articles:list' %}"><img class= "banner" src="{% static 'DC_Characters.webp'%}" alt=""></a></h1>
             <nav>
                 <ul>
-
+                    {% if user.is_authenticated %}
+                    
                     <li>
                         <form action="{% url 'accounts:logout' %}" method="post" class="logout-link">
                             {% csrf_token %}
                             <button type= "submit" >Logout</button>
                         </form>
                     </li>
+                    <li><a href="{% url 'articles:create' %}">New Article</a></li>
+                    {% else %}
+                        <li><a href="{% url 'accounts:login' %}">Login</a></li>
+                        <li><a href="{% url 'accounts:signup' %}">Signup</a></li>
+                    {% endif %}
                 </ul>
             </nav>
         </header>
