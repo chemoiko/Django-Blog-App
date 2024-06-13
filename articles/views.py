@@ -22,10 +22,12 @@ def article_create(request):
     if request.method =='POST':
         form = forms.CreateArticle(request.POST, request.FILES)
         if form.is_valid():
-            #save article to db
+            instance = form.save(commit=False)        #commit=false means hang on a minute, we gonna save it in a second but dont commit to that action just yet .i just want u to give me that instance we are about to save, then well do something with it , then well save it
+            instance.author = request.user      #here we are associating the article that was created with the user
+            instance.save()
             return redirect('articles:list')
     else:
         form = forms.CreateArticle()
-    return render(request, 'articles/article_create.html', {'form':form})    #send it back to a template
+    return render(request, 'articles/article_create.html', {'form':form})    #send it back to a template#the form instance is sent to the article_create.html template
 
 
