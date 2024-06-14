@@ -5,13 +5,15 @@
 
 
 
-    <h1>Article List</h1>
+    <h1>Articles List</h1>
         <div class="articles">
             {%for article in articles%}    <!--these types of brackets are for python code-->
                 <div class="article">
                     <h2><a href="{% url 'articles:detail' abc=article.slug %}">{{article.title}}</a></h2>      <!--now if there are 2 detail urls in 2 different apps, django knows to look into the articles one for this particular-->
                     <p>{{article.snippet}}</p>
                     <p>{{article.date}}</p>
+                    <p class="author">added by {{article.author.username}}</p>
+
                 </div>
             {% endfor%}
         </div>

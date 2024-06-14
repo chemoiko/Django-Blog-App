@@ -1,0 +1,18 @@
+
+{% extends "base_layout.html" %}
+
+
+
+
+{% block content %}
+<h1>sign up</h1>
+<form class="site-form" action="{% url 'accounts:login' %}" method ="post">       <!--data is sent to /accounts/login url-->
+
+    {% csrf_token %}		<!--this is added to tell django that this request has come from our app not other peoples-->
+    {{form}}
+    {% if request.GET.next %}
+        <input type="hidden" name="next" value="{{request.GET.next}}">      <!--the next property will be equal to whatever value is after next in the query string-->
+    {% endif %}
+    <input type="submit" value ="login">
+</form>      
+{% endblock  %}

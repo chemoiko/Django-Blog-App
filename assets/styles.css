@@ -1,7 +1,23 @@
+
+@import url('styles2.css');
 body{
     background-color: red;
+    
+}
+body *{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
 }
 
+h1{
+    color: white;
+    margin-bottom: 50px;
+}
+
+a, a:hover, a:visited{
+    color: #fff;
+    text-decoration: none;
+}
 .banner{
     margin: 0 auto;
 }
@@ -30,4 +46,60 @@ nav{
 
 nav li{
     display: inline-block;
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+nav button{
+    background: none;
+    color: #fff;
+    cursor: pointer;
+    border: 0;
+    font-size: 1em;
+}
+
+
+.articles{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 30px;
+}
+
+.article{
+    padding: 10px;
+    border:1px solid orange;
+    position: relative;
+    padding-bottom: 40px;
+
+}
+
+.article h2{
+    font-size: 1.2em;
+
+}
+
+.article .author{
+    padding: 10px;
+    background: linear-gradient(45deg, #FFA500, #FFFF00);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    color: red;
+}
+.article-detail .article{
+    padding: 0
+}
+
+
+.article-detail .article h2{
+    text-align: center;
+    margin: 20px auto;
+    font-size: 2em;
+}
+
+
+
+.article .author{
+    padding: 10px;
 }
